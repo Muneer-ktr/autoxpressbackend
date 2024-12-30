@@ -1,6 +1,7 @@
 
  const jwt = require('jsonwebtoken');
     const jwtMiddleware = (req,res,next)=>{
+        
         try{
     const token = req.headers['authorization'].split(' ')[1]
     
@@ -10,8 +11,10 @@
     
 }catch(err){
 res.status(401).send('Authorization Failed... Please login')
+console.log(err);
+
 }
-    }
+}
  
 
  module.exports = jwtMiddleware

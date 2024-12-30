@@ -24,7 +24,20 @@ const productSchema =  new mongoose.Schema({
     dealerId:{
         required:true,
         type:String
-    }
+    },
+    reviews:[
+        {
+            review: {
+                type: String
+            },
+            username:{
+                type: String
+            },
+            secondname:{
+                type:String
+            }
+        }
+    ]
 })
 
 const productModel =  mongoose.model('productModel',productSchema)

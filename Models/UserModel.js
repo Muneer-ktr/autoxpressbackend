@@ -14,7 +14,6 @@ const usereSchema = new mongoose.Schema({
         type:String
     },
     password:{
-        required:true,
         type:String
     },
     phonenumber:Number,
@@ -32,7 +31,19 @@ const usereSchema = new mongoose.Schema({
     },
     licence:{
         type:String
-    }
+    },
+    otpExpires :{
+        type:Date
+    },
+    isVerified:{
+        required:true,
+        type:Boolean,
+        default:false
+    },
+    otp:{
+        type:String
+    },
+    
 })
 
 const userModel = mongoose.model('userModel',usereSchema)
